@@ -40,8 +40,17 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Calculo do Juros Composto</h1>");
+            
+            double montante;
+            double TaxaAuxiliar;
             double capital = Double.parseDouble(request.getParameter("Capital"));
-            //out.println("<></>");
+            double taxa = Double.parseDouble(request.getParameter("Taxa"));
+            int prazo = Integer.parseInt(request.getParameter("Prazo em meses"));
+            
+            TaxaAuxiliar = Math.pow(taxa+1, prazo);
+            montante= capital*TaxaAuxiliar;
+            
+            out.println("<h2>Montante com juros aplicado = "+montante+"</h2>");
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
             out.println("</html>");

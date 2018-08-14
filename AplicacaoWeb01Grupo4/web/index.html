@@ -11,10 +11,15 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Apenas um pequeno teste</div>
         <h1>Colocar uma apresentação da equipe e aplicação</h1>
         <h1>Links para os recursos que foram colocados abaixo</h1>
         <h3><a href="jurossimples">Visualização do cálculo do juros simples</a></h3>
         <h3><a href="juroscomposto">Visualização do cálculo do juros composto</a></h3>
+        <form action="juroscomposto">
+        capital <input type="text" name="Capital"/>
+        taxa: <input type="text" name="Taxa"/>
+        prazo: <input type="text" name="Prazo"/>
+        <input type="submit" value="Calcular"/>
+        </form>
     </body>
 </html>
