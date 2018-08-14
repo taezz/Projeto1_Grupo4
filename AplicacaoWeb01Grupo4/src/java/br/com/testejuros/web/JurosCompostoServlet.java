@@ -63,7 +63,7 @@ public class JurosCompostoServlet extends HttpServlet {
             
             //TaxaAuxiliar = Math.pow(taxa+1, prazo);
             //montante = capital*TaxaAuxiliar;
-            montante = capital + Math.pow (1+taxa/100, prazo);
+            montante = capital * Math.pow (1+(taxa/100), prazo);
             
             out.println("<h2>O valor do seu emprestimo é:" + montante + "</h2>");
             out.println("<h2>Servlet jurosSimples at " + request.getContextPath() + "</h1>");
