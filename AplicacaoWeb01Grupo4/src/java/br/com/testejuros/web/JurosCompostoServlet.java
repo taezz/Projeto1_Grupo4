@@ -39,6 +39,9 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<title>Juros Composto</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<h1>Calculo do Juros Composto</h1>");
+            double capital = Double.parseDouble(request.getParameter("Capital"));
+            //out.println("<></>");
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
             out.println("</html>");
