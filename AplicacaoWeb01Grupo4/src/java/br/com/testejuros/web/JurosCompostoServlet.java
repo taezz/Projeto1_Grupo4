@@ -41,17 +41,10 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Calculo do Juros Composto</h1>");
             
-            /*<form action="juroscomposto">
-            capital <input type="text" name="Capital"/>
-            taxa: <input type="text" name="Taxa"/>
-            prazo: <input type="text" name="Prazo"/>
-            <input type="submit" value="Calcular"/>
-            </form>*/
-            
             out.println("<form method='GET'>");
-            out.println("Capital:" + "<input type='text' name='capital'>");
-            out.println("Taxa:" + "<input type='text' name='taxa'>");
-            out.println("Prazo:" + "<input type='text' name='prazo'>");
+            out.println("Valor do empréstimo:" + "<input type='text' name='capital'>");
+            out.println("Valor juros:" + "<input type='text' name='taxa'>");
+            out.println("Meses:" + "<input type='text' name='prazo'>");
             out.println("<input type='submit' value='Processar'>");
             out.println("</form>");
             
@@ -61,8 +54,6 @@ public class JurosCompostoServlet extends HttpServlet {
             double taxa = Double.parseDouble(request.getParameter("taxa"));
             int prazo = Integer.parseInt(request.getParameter("prazo"));
             
-            //TaxaAuxiliar = Math.pow(taxa+1, prazo);
-            //montante = capital*TaxaAuxiliar;
             montante = capital * Math.pow (1+(taxa/100), prazo);
             
             out.println("<h2>O valor do seu emprestimo é:" + montante + "</h2>");
