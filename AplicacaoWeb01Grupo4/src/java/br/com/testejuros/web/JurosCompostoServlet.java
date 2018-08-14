@@ -49,7 +49,6 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("</form>");
             
             double montante;
-            //double TaxaAuxiliar;
             double capital = Double.parseDouble(request.getParameter("capital"));
             double taxa = Double.parseDouble(request.getParameter("taxa"));
             int prazo = Integer.parseInt(request.getParameter("prazo"));

@@ -33,21 +33,17 @@ public class JurosSimplesServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Juros Simples</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Pode utilizar este Servlet para os Juros simples</h1>");
+            out.println("<h1>Calculo do Juros Simples</h1>");
             out.println("<form method='GET'>");
-            out.println("Valor empréstimo:"
-                    + "<input type='text' name='emprestimo'>");
-            out.println("Valor juros:"
-                    + "<input type='text' name='juros'>");
-            out.println("Meses:"
-                    + "<input type='text' name='meses'>");
+            out.println("Valor empréstimo:" + "<input type='text' name='emprestimo'>");
+            out.println("Valor juros:" + "<input type='text' name='juros'>");
+            out.println("Meses:" + "<input type='text' name='meses'>");
             out.println("<input type='submit' value='Processar'>");
             out.println("</form>");
             
