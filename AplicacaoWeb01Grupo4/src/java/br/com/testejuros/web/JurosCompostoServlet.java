@@ -56,13 +56,14 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("</form>");
             
             double montante;
-            double TaxaAuxiliar;
-            double capital = Double.parseDouble(request.getParameter("Capital"));
-            double taxa = Double.parseDouble(request.getParameter("Taxa"));
-            int prazo = Integer.parseInt(request.getParameter("Prazo em meses"));
+            //double TaxaAuxiliar;
+            double capital = Double.parseDouble(request.getParameter("capital"));
+            double taxa = Double.parseDouble(request.getParameter("taxa"));
+            int prazo = Integer.parseInt(request.getParameter("prazo"));
             
-            TaxaAuxiliar = Math.pow(taxa+1, prazo);
-            montante = capital*TaxaAuxiliar;
+            //TaxaAuxiliar = Math.pow(taxa+1, prazo);
+            //montante = capital*TaxaAuxiliar;
+            montante = capital + Math.pow (1+taxa/100, prazo);
             
             out.println("<h2>O valor do seu emprestimo é:" + montante + "</h2>");
             out.println("<h2>Servlet jurosSimples at " + request.getContextPath() + "</h1>");
