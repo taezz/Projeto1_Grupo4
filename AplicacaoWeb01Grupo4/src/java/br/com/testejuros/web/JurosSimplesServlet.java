@@ -41,6 +41,21 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Pode utilizar este Servlet para os Juros simples</h1>");
+            out.println("<form method='GET'>");
+            out.println("Valor empréstimo:"
+                    + "<input type='text' name='emprestimo'>");
+            out.println("Valor juros:"
+                    + "<input type='text' name='juros'>");
+            out.println("Meses:"
+                    + "<input type='text' name='meses'>");
+            out.println("<input type='submit' value='Processar'>");
+            out.println("</form>");
+            
+            double emprestimo = Double.parseDouble(request.getParameter("emprestimo"));
+            float juros = Float.parseFloat(request.getParameter("juros"));
+            int meses = Integer.parseInt(request.getParameter("meses"));
+            double resultado = ((emprestimo * juros * meses)/ 100 + emprestimo);
+            out.println("<h3>O valor do seu emprestimo é:" + resultado + "</h3>");
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
             out.println("</html>");
