@@ -7,6 +7,7 @@ package br.com.testejuros.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.NumberFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +48,7 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("Meses:" + "<input type='text' name='prazo'>");
             out.println("<input type='submit' value='Processar'>");
             out.println("</form>");
-            
+            NumberFormat moeda = NumberFormat.getCurrencyInstance();
             double montante;
             double capital = Double.parseDouble(request.getParameter("capital"));
             double taxa = Double.parseDouble(request.getParameter("taxa"));
@@ -55,7 +56,7 @@ public class JurosCompostoServlet extends HttpServlet {
             
             montante = capital * Math.pow (1+(taxa/100), prazo);
             
-            out.println("<h2>O valor do seu emprestimo é:" + montante + "</h2>");
+            out.println("<h2>O valor do seu emprestimo é:" + moeda.format(montante) + "</h2>");
             out.println("<h2>Servlet jurosSimples at " + request.getContextPath() + "</h1>");
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");

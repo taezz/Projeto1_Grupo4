@@ -7,11 +7,13 @@ package br.com.testejuros.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.NumberFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  *
@@ -46,12 +48,12 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("Meses:" + "<input type='text' name='meses'>");
             out.println("<input type='submit' value='Processar'>");
             out.println("</form>");
-            
+            NumberFormat moeda = NumberFormat.getCurrencyInstance();
             double emprestimo = Double.parseDouble(request.getParameter("emprestimo"));
             float juros = Float.parseFloat(request.getParameter("juros"));
             int meses = Integer.parseInt(request.getParameter("meses"));
             double resultado = ((emprestimo * (juros/100) * meses) + emprestimo);
-            out.println("<h3>O valor do seu emprestimo é:" + resultado + "</h3>");
+            out.println("<h3>O valor do seu emprestimo é:" + moeda.format(resultado) + "</h3>");
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
             out.println("</html>");
