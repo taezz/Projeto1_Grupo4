@@ -66,7 +66,7 @@ public class JurosCompostoServlet extends HttpServlet {
             
             out.println("<h2>O valor do seu emprestimo é:" + montante + "</h2>");
             out.println("<h2>Servlet jurosSimples at " + request.getContextPath() + "</h1>");
-            out.println("<h3><a href='index.html'>Voltar</a></h3>");
+            out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
             out.println("</html>");
         }
