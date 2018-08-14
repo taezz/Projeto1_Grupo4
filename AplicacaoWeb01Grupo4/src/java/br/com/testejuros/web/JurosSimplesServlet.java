@@ -50,7 +50,7 @@ public class JurosSimplesServlet extends HttpServlet {
             double emprestimo = Double.parseDouble(request.getParameter("emprestimo"));
             float juros = Float.parseFloat(request.getParameter("juros"));
             int meses = Integer.parseInt(request.getParameter("meses"));
-            double resultado = ((emprestimo * juros * meses)/ 100 + emprestimo);
+            double resultado = ((emprestimo * (juros/100) * meses) + emprestimo);
             out.println("<h3>O valor do seu emprestimo é:" + resultado + "</h3>");
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
