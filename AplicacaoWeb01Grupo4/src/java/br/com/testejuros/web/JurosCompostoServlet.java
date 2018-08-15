@@ -49,34 +49,19 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<input type='submit' value='Processar'>");
             out.println("</form>");
             NumberFormat moeda = NumberFormat.getCurrencyInstance();
-            double montante;
+            int aux;
             double capital = Double.parseDouble(request.getParameter("capital"));
             double taxa = Double.parseDouble(request.getParameter("taxa"));
             int prazo = Integer.parseInt(request.getParameter("prazo"));
+            double TesteTab[] = new double[prazo];
             
-            montante = capital * Math.pow (1+(taxa/100), prazo);
+            for (int i=0;i<prazo;i++){
+                aux=i+1;
+                TesteTab[i]=capital * Math.pow (1+(taxa/100), i+1);
+                out.println("<h1>"+aux+" º Mês: "+ moeda.format(TesteTab[i]) + "</h1>");
+            }
             
-            out.println("<h2>O valor do seu emprestimo é:" + moeda.format(montante) + "</h2>"); 
-            
-            /*out.println("<table style="width:100%">");
-            out.println("<tr>");
-            out.println("<th>Firstname</th>");
-            out.println("<th>Lastname</th>"); 
-            out.println("<th>Age</th>");
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println("<td>Jill</td>");
-            out.println("<td>Smith</td>");
-            out.println("<td>50</td>");
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println("<td>Eve</td>");
-            out.println("<td>Jackson</td>");
-            out.println("<td>94</td>");
-            out.println("</tr>");
-            out.println("</table>");*/
-            
-            out.println("<h4><a href='index.html'>Voltar</a></h4>");
+            out.println("<h2><a href='index.html'>Voltar</a></h2>");
             out.println("</body>");
             out.println("</html>");
         }
