@@ -58,7 +58,7 @@ public class JurosCompostoServlet extends HttpServlet {
             
             out.println("<h2>O valor do seu emprestimo é:" + moeda.format(montante) + "</h2>"); 
             
-            out.println("<table style="width:100%">");
+            /*out.println("<table style="width:100%">");
             out.println("<tr>");
             out.println("<th>Firstname</th>");
             out.println("<th>Lastname</th>"); 
@@ -74,7 +74,7 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<td>Jackson</td>");
             out.println("<td>94</td>");
             out.println("</tr>");
-            out.println("</table>");
+            out.println("</table>");*/
             
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
