@@ -56,7 +56,25 @@ public class JurosCompostoServlet extends HttpServlet {
             
             montante = capital * Math.pow (1+(taxa/100), prazo);
             
-            out.println("<h2>O valor do seu emprestimo é:" + moeda.format(montante) + "</h2>");
+            out.println("<h2>O valor do seu emprestimo é:" + moeda.format(montante) + "</h2>"); 
+            
+            out.println("<table style="width:100%">");
+            out.println("<tr>");
+            out.println("<th>Firstname</th>");
+            out.println("<th>Lastname</th>"); 
+            out.println("<th>Age</th>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Jill</td>");
+            out.println("<td>Smith</td>");
+            out.println("<td>50</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Eve</td>");
+            out.println("<td>Jackson</td>");
+            out.println("<td>94</td>");
+            out.println("</tr>");
+            out.println("</table>");
             
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
