@@ -63,25 +63,30 @@ public class JurosSimplesServlet extends HttpServlet {
             
             out.println("<body style=\"background-color: #D3D3D3 \">");
             out.println("<nav class=\"navbar sticky-top navbar-dark bg-dark\">\n" +
-            "<a class=\"navbar-brand\" href=\"index.html\">\n" +         
-            "Home\n" +       
+            "<a class=\"navbar-brand\" href=\"Home.php\">\n" +         
+            "Home\n" +   
+                    "<a class=\"navbar-brand\" href=\"juroscomposto\">\n" + 
+               "<center>Juros Composto-->\n" +       
             "</a>\n" +  
             "</nav>");
-            
-            out.println("<center><h1>Calculo do Juros Simples<br><br> </center></h1>");
+            //tabela
+            out.println("<div class=\"jumbotron jumbotron-fluid text-center\" style=\"background-color: #D3D3D3; \">");
+            out.println("<h1>Calculo do Juros Simples </h1>");
             out.println("<center><form method='GET'>");
-            out.println("Valor empréstimo:" + "<input type='text' name='emprestimo'>");
-            out.println("Valor juros:" + "<input type='text' name='juros'>");
-            out.println("Meses:" + "<input type='text' name='meses'>");
-            out.println("<input type='submit' value='Processar'>");
+            out.println("<br>Valor empréstimo:" + "<br><input type='text' name='emprestimo'>");
+            out.println("<br>Valor juros:" + "<br><input type='text' name='juros'>");
+            out.println("<br>Meses:" + "<br><input type='text' name='meses'><br>");
+            out.println("<br><button style=\"background: lightseagreen\" type=\"submit\" class=\"btn btn-default\">Procesar</button>");
             out.println("</center>");
             out.println("</form>");
+            
+            
             NumberFormat moeda = NumberFormat.getCurrencyInstance();
             double emprestimo = Double.parseDouble(request.getParameter("emprestimo"));
             float juros = Float.parseFloat(request.getParameter("juros"));
             int meses = Integer.parseInt(request.getParameter("meses"));
             double resultado = ((emprestimo * (juros/100) * meses) + emprestimo);
-            out.println("<br><center><h3>O valor do seu emprestimo é:" + moeda.format(resultado) + "</center></h3>");
+            out.println("<br><center><h3>O valor do seu emprestimo é: " + moeda.format(resultado) + "</center></h3>");
  
             out.println("</body>");
             out.println("</html>");

@@ -59,19 +59,24 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("<body>");
             out.println("<body style=\"background-color: #D3D3D3 \">");
             out.println("<nav class=\"navbar sticky-top navbar-dark bg-dark\">\n" +
-            "<a class=\"navbar-brand\" href=\"index.html\">\n" +         
-            "Home\n" +       
+            "<a class=\"navbar-brand\" href=\"Home.php\">\n" +         
+            "Home\n" +      
+                    "<a class=\"navbar-brand\" href=\"jurossimples\">\n"+
+            "<center>Juros Simples-->\n" +       
             "</a>\n" +  
             "</nav>");
 
            
-            out.println("<h1>Calculo do Juros Composto</h1>");
-
+            out.println("<div class=\"jumbotron jumbotron-fluid text-center\" style=\"background-color: #D3D3D3; \">");
+            out.println("<center><h1>Calculo do Juros Composto</h1>");
+            
+            
+            out.println("<center>");
             out.println("<form method='GET'>");
-            out.println("Valor do empréstimo:" + "<input type='text' name='capital'>");
-            out.println("Valor juros:" + "<input type='text' name='taxa'>");
-            out.println("Meses:" + "<input type='text' name='prazo'>");
-            out.println("<input type='submit' value='Processar'>");
+            out.println("<br>Valor do empréstimo:" + "<br><input type='text' name='capital'>");
+            out.println("<br>Valor juros:" + "<br><input type='text' name='taxa'>");
+            out.println("<br>Meses:" + "<br><input type='text' name='prazo'><br>");
+            out.println("<br><button style=\"background: lightseagreen\" type=\"submit\" class=\"btn btn-default\">Procesar</button>");
             out.println("</form>");
             NumberFormat moeda = NumberFormat.getCurrencyInstance();
             int aux;
@@ -79,7 +84,7 @@ public class JurosCompostoServlet extends HttpServlet {
             double taxa = Double.parseDouble(request.getParameter("taxa"));
             int prazo = Integer.parseInt(request.getParameter("prazo"));
             double TesteTab[] = new double[prazo];
-            out.println("<table border='1'>");
+            out.println("<table class=\"table table-striped table-bordered table-condensed table-hover\">");
             out.println("<center><tr><th>Mês</th><th>Valor Parcela</th></tr></center>");
             
             
@@ -92,7 +97,7 @@ public class JurosCompostoServlet extends HttpServlet {
 
             }
             
-            out.println("<h2><a href='index.html'>Voltar</a></h2>");
+        
             out.println("</body>");
             out.println("</html>");
         }
