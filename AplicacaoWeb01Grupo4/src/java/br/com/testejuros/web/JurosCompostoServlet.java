@@ -54,11 +54,15 @@ public class JurosCompostoServlet extends HttpServlet {
             double taxa = Double.parseDouble(request.getParameter("taxa"));
             int prazo = Integer.parseInt(request.getParameter("prazo"));
             double TesteTab[] = new double[prazo];
+            out.println("<table border='1'>");
+            out.println("<tr><th>Mês</th><th>Valor Parcela</th></tr>");
+            
             
             for (int i=0;i<prazo;i++){
                 aux=i+1;
                 TesteTab[i]=capital * Math.pow (1+(taxa/100), i+1);
-                out.println("<h1>"+aux+" º Mês: "+ moeda.format(TesteTab[i]) + "</h1>");
+                //out.println("<h1>"+aux+" º Mês: "+ moeda.format(TesteTab[i]) + "</h1>");
+                out.println("<tr><td>"+aux+" º Mês: </td>" + "<td>" + moeda.format(TesteTab[i]) + "</td></tr>");
             }
             
             out.println("<h2><a href='index.html'>Voltar</a></h2>");
